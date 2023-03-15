@@ -1,2 +1,3 @@
 # .gitignore 
 config.py
+/frame-extraction/videos/*-frames

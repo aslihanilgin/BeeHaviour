@@ -1,3 +1,7 @@
-Video,Frame,X_coord,Y_coord
-Sample_video,frame0-00-00.00.jpg,772.0,872.0
-Sample_video,frame0-00-00.12.jpg,,
+video,frame,video_time,x_mid,y_mid,velocity,walkupdown,fly,pause,groom,drop,fan,other
+Sample_video,frame0-00-00.00.jpg,00:00:00,772.0,872.0
+Sample_video,frame0-00-00.12.jpg,00:00:12,,
+Sample_video,frame0-00-00.20.jpg,00:00:20,829.5,814.5
+Sample_video,frame0-00-00.32.jpg,00:00:32,,
+Sample_video,frame0-00-00.40.jpg,00:00:40,835.0,726.5
+Sample_video,frame0-00-00.52.jpg,00:00:52,834.5,729.5
