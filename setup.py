@@ -10,5 +10,5 @@ setup(
   download_url = 'https://github.com/aslihanilgin/analysing-bee-behaviour.git',
   keywords = ['computer vision','ML','object detection','sample'],
   classifiers = [],
-  install_requires=['roboflow','numpy', 'cv2'],
+  install_requires=['roboflow','numpy', 'cv2', 'pandas'],
 )

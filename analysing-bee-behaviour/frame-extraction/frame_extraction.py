@@ -41,7 +41,7 @@ def main(video_file):
             # if closest duration is less than or equals the frame duration, 
             # then save the frame
             frame_duration_formatted = format_timedelta(timedelta(seconds=frame_duration))
-            cv2.imwrite(os.path.join(filename, f"frame{frame_duration_formatted}.jpg"), frame) 
+            cv2.imwrite(os.path.join(filename, f"{count}-frame{frame_duration_formatted}.jpg"), frame) 
             # drop the duration spot from the list, since this duration spot is already saved
             try:
                 saving_frames_durations.pop(0)

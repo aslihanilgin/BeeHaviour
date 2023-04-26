@@ -21,17 +21,21 @@ frames = []
 video_name = sys.argv[1]
 
 extracted_frames_dir = getcwd() +"/frame-extraction/videos/"+video_name+"-frames"
-# extracted_frames_dir = getcwd() +"/frame-extraction/videos/"+"test-video-short"+"-frames"
-for frame_name in sorted(listdir(extracted_frames_dir)):
+
+def sort_frames(item):
+    #You need to return the key you want to sort on
+    return int(item.split('-')[0])
+
+for frame_name in sorted(listdir(extracted_frames_dir), key=sort_frames):
     frames.append(frame_name)
 
 
 # https://www.scaler.com/topics/how-to-create-a-csv-file-in-python/
-with open('info-extraction/bumbleebee_test.csv', 'w', newline='') as file:
+with open('info-extraction/bumblebee_test.csv', 'w', newline='') as file:
 # TODO: for the whole loop 
     writer = csv.writer(file)
     
-    column_names = ["video", "frame", "video_time", "x_mid", "y_mid", "velocity", "walk"
+    column_names = ["video", "frame_no", "frame_name", "video_time", "x_mid", "y_mid", "velocity", "walk"
                     "updown", "fly", "pause", "groom", "drop", "fan", "other"]
     writer.writerow(column_names)
 
@@ -58,11 +62,14 @@ with open('info-extraction/bumbleebee_test.csv', 'w', newline='') as file:
 
         # get timestamp of frame
         time_digits = re.findall(r'\d+', frame)
-        mins, secs, milisecs = time_digits[1], time_digits[2], time_digits[3]
+        mins, secs, milisecs = time_digits[2], time_digits[3], time_digits[4]
         video_time = mins + ":" + secs + ":" + milisecs
 
+        # get frame number
+        frame_no = time_digits[0]
+
         # write to csv file
-        frame_values = ["Sample_video", frame, video_time, video_frames_dict[frame]['x_mid'], video_frames_dict[frame]['y_mid']]
+        frame_values = ["Sample_video", frame_no, frame, video_time, video_frames_dict[frame]['x_mid'], video_frames_dict[frame]['y_mid']]
         writer.writerow(frame_values)
 
 
