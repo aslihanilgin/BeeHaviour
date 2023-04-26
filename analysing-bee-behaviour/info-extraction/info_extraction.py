@@ -22,6 +22,7 @@ video_name = sys.argv[1]
 
 extracted_frames_dir = getcwd() +"/frame-extraction/videos/"+video_name+"-frames"
 
+# https://stackoverflow.com/questions/55946720/sort-a-list-by-specific-location-in-string
 def sort_frames(item):
     #You need to return the key you want to sort on
     return int(item.split('-')[0])
