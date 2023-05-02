@@ -1,7 +1,6 @@
 class pred_val_extraction:
     x_mid = 0
     y_mid = 0
-    # TODO: deltax, deltay, velocity
 
     def __init__(self, pred):
         self.pred = pred
@@ -24,8 +23,12 @@ class pred_val_extraction:
         prev_y = db[prev_img]['predictions'][0]['y']
         return prev_y - current_y
 
-    def compute_velocity(self, db, current_img, prev_img):
-        delta_t = video_frames[prev_img]['video_time'] - video_frames[current_img]['video_time']
-        delta_y = compute_delta_y(db, prev_img)
-        velocity = delta_y / delta_t
+    def compute_velocity(y2, y1, t2, t1):
+        delta_y = abs(y2 - y1)
+        delta_t = abs(t2 - t1)
+        if delta_t == 0:
+            velocity = float("NaN")
+        else:
+            velocity = delta_y / delta_t
+        return round(velocity,1)
         
