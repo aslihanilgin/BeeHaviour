@@ -45,8 +45,6 @@ with open('info-extraction/bumblebee_test.csv', 'w', newline='') as file:
         # infer on a local image
         frame_dir = getcwd() + "/frame-extraction/videos/test-video-short-frames/" + frame
         prediction = model.predict(frame_dir, confidence=40, overlap=30).json()
-        # debug
-        print(prediction)
 
         # create a key for the frame in the dict
         if frame not in video_frames_dict:
@@ -72,11 +70,3 @@ with open('info-extraction/bumblebee_test.csv', 'w', newline='') as file:
         # write to csv file
         frame_values = ["Sample_video", frame_no, frame, video_time, video_frames_dict[frame]['x_mid'], video_frames_dict[frame]['y_mid']]
         writer.writerow(frame_values)
-
-
-    # visualize your prediction
-    # save_dir = getcwd() + "/frame-extraction/videos/predicted-frames/"
-    # model.predict(frame_dir, confidence=40, overlap=30).save(save_dir + "prediction_"+ frame +".jpg")
-
-# infer on an image hosted elsewhere
-# print(model.predict("URL_OF_YOUR_IMAGE", hosted=True, confidence=40, overlap=30).json())
