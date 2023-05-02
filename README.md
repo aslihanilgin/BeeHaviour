@@ -13,9 +13,9 @@ Activate the Conda environment using:
 ## Extracting frames
 Run the program from the root folder using:
 
-*python <dir_to_frame_extraction.py_file> <dir_to_video>*
+*python <dir_to_frame_extraction.py_file> <dir_to_video> <frame_rate_of_the_analysis_video>*
 
-`python frame-extraction/frame_extraction.py frame-extraction/videos/test-video-short.MOV`
+`python frame-extraction/frame_extraction.py frame-extraction/videos/test-video-short.MOV 25`
 
 ## Extracting information from frames
 Run the program from the root folder using:
@@ -27,6 +27,6 @@ Run the program from the root folder using:
 ## Manipulate information in the CSV
 To manipulate information in the information CSV file and to use the information to compute further calculations, run the manipulation file using:
 
-*python <dir_to_table_manipulation.py_file> <frame_rate_of_your_video>*
+*python <dir_to_table_manipulation.py_file> <frame_rate_of_the_analysis_video>*
 
 `python info-extraction/table_manipulation.py 25`
