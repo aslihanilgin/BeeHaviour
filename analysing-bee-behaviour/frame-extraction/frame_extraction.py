@@ -3,10 +3,11 @@
 from datetime import timedelta
 import numpy as np
 import cv2
-import os
+import os 
+import sys
 
 # extracting frames from videos
-FRAMES_PER_SECOND = 10
+FRAMES_PER_SECOND = 50 # placeholder, can be overwritten
 
 def main(video_file):
     filename, _ = os.path.splitext(video_file)
@@ -73,6 +74,8 @@ def get_saving_frames_durations(cap, saving_fps):
     return s
 
 if __name__ == "__main__":
-    import sys
+   
     video_file = sys.argv[1]
+    FRAMES_PER_SECOND = int(sys.argv[2])
+
     main(video_file)

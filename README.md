@@ -20,9 +20,9 @@ Run the program from the root folder using:
 ## Extracting information from frames
 Run the program from the root folder using:
 
-*python <dir_to_info_extraction.py_file>*
+*python <dir_to_info_extraction.py_file> <name_of_the_analysis_video>*
 
-`python info-extraction/info_extraction.py`
+`python info-extraction/info_extraction.py test-video-short`
 
 ## Manipulate information in the CSV
 To manipulate information in the information CSV file and to use the information to compute further calculations, run the manipulation file using:
