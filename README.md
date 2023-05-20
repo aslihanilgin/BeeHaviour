@@ -3,9 +3,9 @@
 ## Activating the Conda environment
 This project has a few pre-requisities that need to be installed. The following table shows the packages you need to install inside your Conda environment.
 
-Package Name | matplotlib | numpy | pandas | python | roboflow | opencv-python
---- | --- | --- | --- |--- |--- |--- |--- |---
-Version | 3.7.0 | 1.24.2 | 1.5.2 | 3.11.0 | 0.2.32 | 4.7.0.68
+| Package Name | matplotlib | numpy | pandas | python | roboflow | opencv-python |
+| ------------ | ---------- | ----- | ------ | ------ | -------- | ------------- |
+| Version      | 3.7.0      | 1.24.2 | 1.5.2  | 3.11.0 | 0.2.32   | 4.7.0.68      |
 Activate the Conda environment using:
 
 `conda activate bee-behaviour`
